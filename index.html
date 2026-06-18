@@ -1,411 +1,387 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALLME.FUN - Pitch Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* --- CYBERPUNK BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>BALLME.FUN | Survival of the Fattest</title>\
-    \
-    <!-- Retro Fonts -->\
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">\
-    \
-    <style>\
-        :root \{\
-            --pump-green: #14F195;\
-            --neon-pink: #FF00FF;\
-            --bg-color: #050505;\
-            --solflare-orange: #EC5728;\
-            --phantom-purple: #AB9FF2;\
-        \}\
-\
-        * \{\
-            box-sizing: border-box;\
-            margin: 0;\
-            padding: 0;\
-        \}\
-\
-        body \{\
-            background-color: var(--bg-color);\
-            color: #ffffff;\
-            font-family: 'Orbitron', sans-serif;\
-            text-align: center;\
-            overflow-x: hidden;\
-            background-image: \
-                linear-gradient(rgba(20, 241, 149, 0.05) 1px, transparent 1px),\
-                linear-gradient(90deg, rgba(20, 241, 149, 0.05) 1px, transparent 1px);\
-            background-size: 40px 40px;\
-        \}\
-\
-        /* --- PRELOADER --- */\
-        #preloader \{\
-            position: fixed;\
-            top: 0; left: 0; width: 100%; height: 100%;\
-            background: var(--bg-color);\
-            display: flex;\
-            flex-direction: column;\
-            justify-content: center;\
-            align-items: center;\
-            z-index: 9999;\
-            font-family: 'Press Start 2P', cursive;\
-            color: var(--pump-green);\
-        \}\
-\
-        .loading-text \{\
-            font-size: 1rem;\
-            animation: blink 0.5s infinite alternate;\
-            line-height: 2;\
-        \}\
-\
-        /* --- MAIN CONTENT (Hidden initially) --- */\
-        #main-content \{\
-            display: none;\
-            padding-bottom: 60px; /* Space for ticker */\
-        \}\
-\
-        /* --- HERO SECTION --- */\
-        .hero \{\
-            min-height: 80vh;\
-            display: flex;\
-            flex-direction: column;\
-            justify-content: center;\
-            align-items: center;\
-            padding: 20px;\
-        \}\
-\
-        h1.title \{\
-            font-family: 'Press Start 2P', cursive;\
-            font-size: 3rem;\
-            margin-bottom: 15px;\
-            color: #fff;\
-            text-shadow: 0 0 10px var(--neon-pink), 0 0 30px var(--neon-pink);\
-            letter-spacing: 2px;\
-        \}\
-\
-        h2.subtitle \{\
-            font-size: 1.2rem;\
-            color: var(--pump-green);\
-            margin-bottom: 50px;\
-            letter-spacing: 3px;\
-        \}\
-\
-        /* --- WALLET HUB --- */\
-        .wallet-hub \{\
-            background: rgba(20, 241, 149, 0.05);\
-            border: 2px solid rgba(20, 241, 149, 0.3);\
-            padding: 40px;\
-            border-radius: 15px;\
-            backdrop-filter: blur(10px);\
-            box-shadow: 0 0 30px rgba(20, 241, 149, 0.1);\
-            max-width: 500px;\
-            width: 100%;\
-            min-height: 250px;\
-            display: flex;\
-            flex-direction: column;\
-            justify-content: center;\
-            align-items: center;\
-        \}\
-\
-        .hub-title \{\
-            font-family: 'Press Start 2P', cursive;\
-            font-size: 0.9rem;\
-            margin-bottom: 30px;\
-            color: #fff;\
-        \}\
-\
-        .wallet-buttons \{\
-            display: flex;\
-            flex-direction: column;\
-            gap: 15px;\
-            width: 100%;\
-        \}\
-\
-        .btn \{\
-            font-family: 'Orbitron', sans-serif;\
-            font-weight: 900;\
-            font-size: 1.2rem;\
-            padding: 15px 20px;\
-            cursor: pointer;\
-            text-transform: uppercase;\
-            border-radius: 8px;\
-            border: 2px solid transparent;\
-            background: rgba(255, 255, 255, 0.1);\
-            color: #fff;\
-            transition: all 0.2s ease;\
-            width: 100%;\
-        \}\
-\
-        .btn-phantom \{\
-            border-color: var(--phantom-purple);\
-            box-shadow: 0 0 10px rgba(171, 159, 242, 0.3);\
-        \}\
-        .btn-phantom:hover \{\
-            background: var(--phantom-purple);\
-            color: #000;\
-            box-shadow: 0 0 20px var(--phantom-purple);\
-        \}\
-\
-        .btn-solflare \{\
-            border-color: var(--solflare-orange);\
-            box-shadow: 0 0 10px rgba(236, 87, 40, 0.3);\
-        \}\
-        .btn-solflare:hover \{\
-            background: var(--solflare-orange);\
-            color: #000;\
-            box-shadow: 0 0 20px var(--solflare-orange);\
-        \}\
-\
-        /* --- MASSIVE ENTER GAME BUTTON --- */\
-        .btn-enter-game \{\
-            display: none; /* Hidden by default */\
-            background-color: transparent;\
-            color: var(--pump-green);\
-            border: 4px solid var(--pump-green);\
-            font-family: 'Press Start 2P', cursive;\
-            font-size: 1.5rem;\
-            padding: 30px 20px;\
-            width: 100%;\
-            cursor: pointer;\
-            border-radius: 10px;\
-            text-transform: uppercase;\
-            box-shadow: 0 0 20px var(--pump-green), inset 0 0 10px var(--pump-green);\
-            animation: massiveBlink 1s infinite alternate;\
-        \}\
-\
-        .btn-enter-game:hover \{\
-            background-color: var(--pump-green);\
-            color: var(--bg-color);\
-            box-shadow: 0 0 50px var(--pump-green), inset 0 0 20px var(--pump-green);\
-        \}\
-\
-        /* --- HOW TO SURVIVE SECTION --- */\
-        .how-to \{\
-            padding: 60px 20px;\
-            border-top: 1px solid rgba(255, 255, 255, 0.1);\
-            background: rgba(0,0,0,0.5);\
-        \}\
-\
-        .glitch-title \{\
-            font-family: 'Press Start 2P', cursive;\
-            font-size: 1.5rem;\
-            color: var(--neon-pink);\
-            margin-bottom: 50px;\
-            animation: glitch 3s infinite;\
-        \}\
-\
-        .steps-container \{\
-            display: flex;\
-            justify-content: center;\
-            flex-wrap: wrap;\
-            gap: 30px;\
-            max-width: 1000px;\
-            margin: 0 auto;\
-        \}\
-\
-        .step-box \{\
-            flex: 1;\
-            min-width: 250px;\
-            background: rgba(255, 255, 255, 0.03);\
-            border: 1px solid rgba(255, 255, 255, 0.1);\
-            padding: 30px;\
-            border-radius: 10px;\
-        \}\
-\
-        .step-box h3 \{\
-            font-family: 'Press Start 2P', cursive;\
-            font-size: 1rem;\
-            color: var(--pump-green);\
-            margin-bottom: 15px;\
-            line-height: 1.5;\
-        \}\
-\
-        .step-box p \{\
-            font-size: 1rem;\
-            line-height: 1.6;\
-            color: #ccc;\
-        \}\
-\
-        /* --- FOOTER / SOCIALS --- */\
-        footer \{\
-            padding: 40px 20px 80px 20px;\
-            display: flex;\
-            justify-content: center;\
-            gap: 20px;\
-            flex-wrap: wrap;\
-        \}\
-\
-        .social-btn \{\
-            padding: 15px 30px;\
-            border: 1px solid #fff;\
-            color: #fff;\
-            text-decoration: none;\
-            font-weight: bold;\
-            text-transform: uppercase;\
-            border-radius: 5px;\
-            transition: 0.2s;\
-        \}\
-\
-        .social-btn:hover \{\
-            background: #fff;\
-            color: #000;\
-        \}\
-\
-        /* --- TICKER --- */\
-        .ticker-wrap \{\
-            position: fixed;\
-            bottom: 0;\
-            width: 100%;\
-            background-color: var(--pump-green);\
-            color: var(--bg-color);\
-            padding: 10px 0;\
-            font-family: 'Press Start 2P', cursive;\
-            font-size: 0.8rem;\
-            overflow: hidden;\
-            white-space: nowrap;\
-            z-index: 100;\
-            border-top: 2px solid #fff;\
-        \}\
-\
-        .ticker-content \{\
-            display: inline-block;\
-            padding-left: 100%;\
-            animation: ticker 20s linear infinite;\
-        \}\
-\
-        /* --- ANIMATIONS --- */\
-        @keyframes blink \{\
-            0% \{ opacity: 0.3; \}\
-            100% \{ opacity: 1; \}\
-        \}\
-\
-        @keyframes massiveBlink \{\
-            0% \{ box-shadow: 0 0 10px var(--pump-green); transform: scale(1); \}\
-            100% \{ box-shadow: 0 0 30px var(--pump-green), inset 0 0 15px var(--pump-green); transform: scale(1.02); \}\
-        \}\
-\
-        @keyframes ticker \{\
-            0% \{ transform: translate3d(0, 0, 0); \}\
-            100% \{ transform: translate3d(-100%, 0, 0); \}\
-        \}\
-\
-        @keyframes glitch \{\
-            0% \{ text-shadow: 2px 0 var(--pump-green), -2px 0 var(--neon-pink); \}\
-            5% \{ text-shadow: -2px 0 var(--pump-green), 2px 0 var(--neon-pink); \}\
-            10% \{ text-shadow: 2px 0 var(--pump-green), -2px 0 var(--neon-pink); \}\
-            15% \{ text-shadow: none; \}\
-            100% \{ text-shadow: none; \}\
-        \}\
-\
-        @media (max-width: 768px) \{\
-            h1.title \{ font-size: 2rem; \}\
-            .btn-enter-game \{ font-size: 1.2rem; \}\
-        \}\
-    </style>\
-</head>\
-<body>\
-\
-    <!-- PRELOADER -->\
-    <div id="preloader">\
-        <div class="loading-text">\
-            BOOTING DEGEN ENGINE...<br><br>\
-            PUMPING $BALLS...\
-        </div>\
-    </div>\
-\
-    <!-- MAIN UI -->\
-    <div id="main-content">\
-        \
-        <section class="hero">\
-            <h1 class="title">BALLME.FUN</h1>\
-            <h2 class="subtitle">THE ULTIMATE SURVIVAL OF THE FATTEST</h2>\
-\
-            <div class="wallet-hub">\
-                <div id="hub-title" class="hub-title">CONNECT TO ENTER THE ARENA</div>\
-                \
-                <!-- Initial Wallet Buttons -->\
-                <div id="wallet-buttons" class="wallet-buttons">\
-                    <button class="btn btn-phantom" onclick="simulateConnection(this)">\uc0\u55357 \u57315  CONNECT PHANTOM</button>\
-                    <button class="btn btn-solflare" onclick="simulateConnection(this)">\uc0\u55357 \u57312  CONNECT SOLFLARE</button>\
-                </div>\
-\
-                <!-- Hidden Enter Game Button -->\
-                <button id="enter-game-btn" class="btn-enter-game">ENTER GAME</button>\
-            </div>\
-        </section>\
-\
-        <section class="how-to">\
-            <h2 class="glitch-title">HOW TO SURVIVE</h2>\
-            <div class="steps-container">\
-                <div class="step-box">\
-                    <h3>\uc0\u55357 \u56411  CONNECT & APE</h3>\
-                    <p>Connect your Phantom or Solflare wallet. No bullshit, straight to the action.</p>\
-                </div>\
-                <div class="step-box">\
-                    <h3>\uc0\u55357 \u57314  EAT & GROW</h3>\
-                    <p>Control your ball. Eat the small ones. Dodge the whales. Grow your $BALLS.</p>\
-                </div>\
-                <div class="step-box">\
-                    <h3>\uc0\u55356 \u57286  DOMINATE</h3>\
-                    <p>Take the number 1 spot on the leaderboard and flex on X.</p>\
-                </div>\
-            </div>\
-        </section>\
-\
-        <footer>\
-            <a href="#" class="social-btn">\uc0\u55357 \u56358  JOIN THE CULT (X)</a>\
-            <a href="#" class="social-btn">\uc0\u9992 \u65039  SHILL ZONE (TG)</a>\
-            <a href="#" class="social-btn">\uc0\u55357 \u56458  BUY $BALLS</a>\
-        </footer>\
-\
-    </div>\
-\
-    <!-- FIXED TICKER -->\
-    <div class="ticker-wrap">\
-        <div class="ticker-content">\
-            \uc0\u55357 \u56960  PUMP.FUN LAUNCH IMMINENT \u55357 \u57314  LIVE PLAYERS: 00 \u55357 \u57314  BIGGEST BALL: TBA \u55357 \u57314  DON'T JEET, JUST EAT \u55357 \u56960  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \u55357 \u56960  PUMP.FUN LAUNCH IMMINENT \u55357 \u57314  LIVE PLAYERS: 00 \u55357 \u57314  BIGGEST BALL: TBA \u55357 \u57314  DON'T JEET, JUST EAT \u55357 \u56960 \
-        </div>\
-    </div>\
-\
-    <script>\
-        // 1. Remove Preloader after 1.5 seconds\
-        window.addEventListener('load', () => \{\
-            setTimeout(() => \{\
-                document.getElementById('preloader').style.display = 'none';\
-                document.getElementById('main-content').style.display = 'block';\
-            \}, 1500);\
-        \});\
-\
-        // 2. UI Logic for Wallet Connection\
-        function simulateConnection(clickedButton) \{\
-            const walletButtonsContainer = document.getElementById('wallet-buttons');\
-            const hubTitle = document.getElementById('hub-title');\
-            const enterGameBtn = document.getElementById('enter-game-btn');\
-            \
-            // Visual feedback on click\
-            clickedButton.innerText = "CONNECTING...";\
-            \
-            // Simulate Web3 connection delay (1 second)\
-            setTimeout(() => \{\
-                // Hide wallet buttons and update title\
-                walletButtonsContainer.style.display = 'none';\
-                hubTitle.innerText = "WALLET CONNECTED. READY TO PUMP.";\
-                hubTitle.style.color = "#14F195"; // Make title green\
-                \
-                // Show the massive blinking ENTER GAME button\
-                enterGameBtn.style.display = 'block';\
-            \}, 1000);\
-        \}\
-\
-        // Dev Note: Bind actual Web3 logic to the ENTER GAME button\
-        document.getElementById('enter-game-btn').addEventListener('click', () => \{\
-            alert('DEV INSTRUCTION: This button triggers the game canvas to load over the UI.');\
-        \});\
-    </script>\
-\
-</body>\
-</html>}
+        body {
+            background-color: #05050c;
+            color: #ffffff;
+            font-family: 'Space Mono', monospace;
+            overflow-x: hidden;
+        }
+
+        /* Fullscreen Slide System */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 40px;
+            border-bottom: 2px solid #1a1a3a;
+            background-image: 
+                linear-gradient(rgba(26, 26, 58, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26, 26, 58, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .slide-content {
+            width: 1200px;
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .full-width {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        /* Typography & Glows */
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 44px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 15%;
+            width: 6px;
+            height: 70%;
+            background-color: #ff00ff;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+
+        .system-status {
+            color: #00f3ff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #a0a0c0;
+            margin-bottom: 30px;
+        }
+
+        /* --- BULLET POINTS --- */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-item::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #00f3ff;
+            font-weight: 700;
+            text-shadow: 0 0 8px #00f3ff;
+        }
+
+        .feature-title {
+            color: #00f3ff;
+            font-weight: 700;
+            font-size: 20px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .feature-desc {
+            font-size: 16px;
+            color: #a0a0c0;
+        }
+
+        /* --- TERMINAL & WALLET BOX (SLIDE 1) --- */
+        .terminal-box {
+            background: rgba(5, 5, 15, 0.8);
+            border: 2px dashed #39ff14;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.15);
+            max-width: 500px;
+        }
+
+        .terminal-text {
+            color: #39ff14;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            animation: blink 1.5s infinite;
+        }
+
+        .wallet-apps {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .wallet-btn {
+            background: #0d0d26;
+            border: 1px solid #ff8800;
+            padding: 14px 24px;
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .wallet-btn.phantom {
+            border-color: #ab9ff2;
+        }
+        .wallet-btn.phantom i { color: #ab9ff2; }
+
+        .wallet-btn.solflare {
+            border-color: #f5841f;
+        }
+        .wallet-btn.solflare i { color: #f5841f; }
+
+        .wallet-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- THE ROTATING NEON BALL (SLIDE 2) --- */
+        .visual-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            position: relative;
+        }
+
+        /* Radiant outer tech-ring */
+        .tech-ring {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border: 2px solid rgba(255, 0, 255, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(255, 0, 255, 0.05);
+        }
+
+        .cyber-ball {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: transparent;
+            border: 4px dashed #00f3ff;
+            box-shadow: 
+                0 0 20px #00f3ff, 
+                0 0 40px #00f3ff, 
+                inset 0 0 20px #00f3ff,
+                inset 0 0 40px #00f3ff;
+            position: relative;
+            animation: rotate-ball 4s linear infinite;
+        }
+
+        /* Neon payload node inside the ball */
+        .cyber-ball::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            width: 32px;
+            height: 32px;
+            background-color: #ff00ff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+        }
+
+        /* --- TOKENOMICS GRID (SLIDE 3) --- */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: rgba(13, 13, 38, 0.6);
+            border: 1px solid #1a1a3a;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+            transition: border 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.1);
+        }
+
+        .card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff00ff;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .ca-box {
+            margin-top: 40px;
+            display: inline-block;
+            background: #111126;
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: 1px solid #1a1a3a;
+            font-size: 14px;
+            color: #00f3ff;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes rotate-ball {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Responsive Setup */
+        @media(max-width: 968px) {
+            .slide-content { grid-template-columns: 1fr; gap: 40px; }
+            .slide { height: auto; padding: 80px 20px; }
+            h1 { font-size: 48px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="slide">
+        <div class="slide-content">
+            <div class="text-side">
+                <div class="system-status">// DEGEN_SYS_ONLINE</div>
+                <h1>BALLME.FUN</h1>
+                <p>The high-stakes, on-chain dopamine engine. Engineered specifically for the fast-paced pump.fun gaming meta. Pure physics, zero friction, infinite scalability.</p>
+            </div>
+            <div class="visual-side" style="display: flex; justify-content: center;">
+                <div class="terminal-box">
+                    <div class="terminal-text">> AWAITING_WALLET_SIGNATURE _</div>
+                    <div class="wallet-apps">
+                        <button class="wallet-btn phantom">
+                            <i class="fa-solid fa-ghost"></i> PHANTOM
+                        </button>
+                        <button class="wallet-btn solflare">
+                            <i class="fa-solid fa-sun"></i> SOLFLARE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div class="slide-content">
+            <div class="text-side">
+                <h2>THE ADDICTION ENGINE</h2>
+                <p>We aren't building a short-lived meme; we are deploying a high-end digital casino disguised as a physics-based arcade game. The loop is clean, provably fair, and engineered for retention.</p>
+                
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <span class="feature-title">Drop the Payload</span>
+                        <span class="feature-desc">Players release tokens into the dynamic, on-chain digital pegboard system.</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-title">Physics-Based Multipliers</span>
+                        <span class="feature-desc">Real-time velocity and collision mechanics determine the exact payout multiplier zone.</span>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-title">Instant Settlement</span>
+                        <span class="feature-desc">Winnings are instantly compiled and routed directly back to the connected Solana wallet.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="visual-side">
+                <div class="visual-container">
+                    <div class="tech-ring"></div>
+                    <div class="cyber-ball"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div class="slide-content full-width">
+            <div class="text-side">
+                <h2>THE INVISIBLE BUY WALL</h2>
+                <p style="max-width: 800px; margin: 0 auto 40px auto;">A revolutionary liquidity engine built to sustain aggressive upward chart momentum during and after our pump.fun fair launch.</p>
+                
+                <div class="grid-cards">
+                    <div class="card">
+                        <h3>Auto-Swap Frictionless Entry</h3>
+                        <p style="font-size: 15px; margin: 0;">Players enter using native $SOL or $USDC. The underlying smart contract instantly swaps inputs into $BALLME on the open market, printing continuous buy pressure on the chart.</p>
+                    </div>
+                    <div class="card">
+                        <h3>The Ultimate House Sink</h3>
+                        <p style="font-size: 15px; margin: 0;">A percentage of the platform's house edge is systematically burned and permanently removed from circulation, creating an aggressive deflationary flywheel.</p>
+                    </div>
+                </div>
+
+                <div class="ca-box">
+                    <i class="fa-solid fa-code"></i> PUMP.FUN LAUNCH MECHANISM ACTIVATING SOON
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
