@@ -197,7 +197,7 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
-        /* --- THE ROTATING NEON BALL (SLIDE 2) --- */
+        /* --- THE PLINKO GAMEPLAY ANIMATION (SLIDE 2) --- */
         .visual-container {
             display: flex;
             justify-content: center;
@@ -216,32 +216,46 @@
             box-shadow: 0 0 40px rgba(255, 0, 255, 0.05);
         }
 
-        .cyber-ball {
-            width: 160px;
-            height: 160px;
+        /* De neon pegs (pinnetjes) waar de bal langs stuitert */
+        .peg {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #39ff14; /* Neon groen */
             border-radius: 50%;
-            background: transparent;
-            border: 4px dashed #00f3ff;
-            box-shadow: 
-                0 0 20px #00f3ff, 
-                0 0 40px #00f3ff, 
-                inset 0 0 20px #00f3ff,
-                inset 0 0 40px #00f3ff;
-            position: relative;
-            animation: rotate-ball 4s linear infinite;
+            box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
         }
 
-        /* Neon payload node inside the ball */
+        /* De vallende payload bal (nu een stukje kleiner) */
+        .cyber-ball {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px dashed #00f3ff;
+            box-shadow: 0 0 15px #00f3ff, inset 0 0 15px #00f3ff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -20px;
+            margin-left: -20px;
+            /* Start de drop animatie met een 'stuiter' timing */
+            animation: plinko-drop 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+        }
+
+        /* Neon kern in de bal */
         .cyber-ball::before {
             content: '';
             position: absolute;
-            top: 18px;
-            left: 18px;
-            width: 32px;
-            height: 32px;
+            top: 6px;
+            left: 6px;
+            width: 24px;
+            height: 24px;
             background-color: #ff00ff;
             border-radius: 50%;
-            box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+            /* Optioneel: laat hem sneller spinnen tijdens de val */
+            animation: spin 1s linear infinite;
         }
 
         /* --- TOKENOMICS GRID (SLIDE 3) --- */
@@ -286,8 +300,17 @@
         }
 
         /* --- ANIMATIONS --- */
-        @keyframes rotate-ball {
-            0% { transform: rotate(0deg); }
+        @keyframes plinko-drop {
+            0%   { transform: translate(0, -180px); opacity: 0; }
+            10%  { transform: translate(0, -150px); opacity: 1; }
+            25%  { transform: translate(-50px, -70px); }
+            50%  { transform: translate(40px, 0px); }
+            75%  { transform: translate(-30px, 80px); }
+            90%  { transform: translate(15px, 140px); opacity: 1; }
+            100% { transform: translate(15px, 180px); opacity: 0; }
+        }
+
+        @keyframes spin {
             100% { transform: rotate(360deg); }
         }
 
@@ -306,6 +329,7 @@
 </head>
 <body>
 
+    <!-- SLIDE 1: HERO SYSTEM -->
     <section class="slide">
         <div class="slide-content">
             <div class="text-side">
@@ -329,6 +353,7 @@
         </div>
     </section>
 
+    <!-- SLIDE 2: THE ADDICTION ENGINE -->
     <section class="slide">
         <div class="slide-content">
             <div class="text-side">
@@ -353,12 +378,20 @@
             <div class="visual-side">
                 <div class="visual-container">
                     <div class="tech-ring"></div>
+                    
+                    <!-- De physics pegs (nauwkeurig geplaatst op de animatiepaden) -->
+                    <div class="peg" style="top: 25%; left: 38%;"></div>
+                    <div class="peg" style="top: 50%; left: 60%;"></div>
+                    <div class="peg" style="top: 70%; left: 40%;"></div>
+                    
+                    <!-- De Payload bal -->
                     <div class="cyber-ball"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SLIDE 3: THE INVISIBLE BUY WALL -->
     <section class="slide">
         <div class="slide-content full-width">
             <div class="text-side">
