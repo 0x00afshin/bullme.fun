@@ -1,0 +1,411 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>BALLME.FUN | Survival of the Fattest</title>\
+    \
+    <!-- Retro Fonts -->\
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">\
+    \
+    <style>\
+        :root \{\
+            --pump-green: #14F195;\
+            --neon-pink: #FF00FF;\
+            --bg-color: #050505;\
+            --solflare-orange: #EC5728;\
+            --phantom-purple: #AB9FF2;\
+        \}\
+\
+        * \{\
+            box-sizing: border-box;\
+            margin: 0;\
+            padding: 0;\
+        \}\
+\
+        body \{\
+            background-color: var(--bg-color);\
+            color: #ffffff;\
+            font-family: 'Orbitron', sans-serif;\
+            text-align: center;\
+            overflow-x: hidden;\
+            background-image: \
+                linear-gradient(rgba(20, 241, 149, 0.05) 1px, transparent 1px),\
+                linear-gradient(90deg, rgba(20, 241, 149, 0.05) 1px, transparent 1px);\
+            background-size: 40px 40px;\
+        \}\
+\
+        /* --- PRELOADER --- */\
+        #preloader \{\
+            position: fixed;\
+            top: 0; left: 0; width: 100%; height: 100%;\
+            background: var(--bg-color);\
+            display: flex;\
+            flex-direction: column;\
+            justify-content: center;\
+            align-items: center;\
+            z-index: 9999;\
+            font-family: 'Press Start 2P', cursive;\
+            color: var(--pump-green);\
+        \}\
+\
+        .loading-text \{\
+            font-size: 1rem;\
+            animation: blink 0.5s infinite alternate;\
+            line-height: 2;\
+        \}\
+\
+        /* --- MAIN CONTENT (Hidden initially) --- */\
+        #main-content \{\
+            display: none;\
+            padding-bottom: 60px; /* Space for ticker */\
+        \}\
+\
+        /* --- HERO SECTION --- */\
+        .hero \{\
+            min-height: 80vh;\
+            display: flex;\
+            flex-direction: column;\
+            justify-content: center;\
+            align-items: center;\
+            padding: 20px;\
+        \}\
+\
+        h1.title \{\
+            font-family: 'Press Start 2P', cursive;\
+            font-size: 3rem;\
+            margin-bottom: 15px;\
+            color: #fff;\
+            text-shadow: 0 0 10px var(--neon-pink), 0 0 30px var(--neon-pink);\
+            letter-spacing: 2px;\
+        \}\
+\
+        h2.subtitle \{\
+            font-size: 1.2rem;\
+            color: var(--pump-green);\
+            margin-bottom: 50px;\
+            letter-spacing: 3px;\
+        \}\
+\
+        /* --- WALLET HUB --- */\
+        .wallet-hub \{\
+            background: rgba(20, 241, 149, 0.05);\
+            border: 2px solid rgba(20, 241, 149, 0.3);\
+            padding: 40px;\
+            border-radius: 15px;\
+            backdrop-filter: blur(10px);\
+            box-shadow: 0 0 30px rgba(20, 241, 149, 0.1);\
+            max-width: 500px;\
+            width: 100%;\
+            min-height: 250px;\
+            display: flex;\
+            flex-direction: column;\
+            justify-content: center;\
+            align-items: center;\
+        \}\
+\
+        .hub-title \{\
+            font-family: 'Press Start 2P', cursive;\
+            font-size: 0.9rem;\
+            margin-bottom: 30px;\
+            color: #fff;\
+        \}\
+\
+        .wallet-buttons \{\
+            display: flex;\
+            flex-direction: column;\
+            gap: 15px;\
+            width: 100%;\
+        \}\
+\
+        .btn \{\
+            font-family: 'Orbitron', sans-serif;\
+            font-weight: 900;\
+            font-size: 1.2rem;\
+            padding: 15px 20px;\
+            cursor: pointer;\
+            text-transform: uppercase;\
+            border-radius: 8px;\
+            border: 2px solid transparent;\
+            background: rgba(255, 255, 255, 0.1);\
+            color: #fff;\
+            transition: all 0.2s ease;\
+            width: 100%;\
+        \}\
+\
+        .btn-phantom \{\
+            border-color: var(--phantom-purple);\
+            box-shadow: 0 0 10px rgba(171, 159, 242, 0.3);\
+        \}\
+        .btn-phantom:hover \{\
+            background: var(--phantom-purple);\
+            color: #000;\
+            box-shadow: 0 0 20px var(--phantom-purple);\
+        \}\
+\
+        .btn-solflare \{\
+            border-color: var(--solflare-orange);\
+            box-shadow: 0 0 10px rgba(236, 87, 40, 0.3);\
+        \}\
+        .btn-solflare:hover \{\
+            background: var(--solflare-orange);\
+            color: #000;\
+            box-shadow: 0 0 20px var(--solflare-orange);\
+        \}\
+\
+        /* --- MASSIVE ENTER GAME BUTTON --- */\
+        .btn-enter-game \{\
+            display: none; /* Hidden by default */\
+            background-color: transparent;\
+            color: var(--pump-green);\
+            border: 4px solid var(--pump-green);\
+            font-family: 'Press Start 2P', cursive;\
+            font-size: 1.5rem;\
+            padding: 30px 20px;\
+            width: 100%;\
+            cursor: pointer;\
+            border-radius: 10px;\
+            text-transform: uppercase;\
+            box-shadow: 0 0 20px var(--pump-green), inset 0 0 10px var(--pump-green);\
+            animation: massiveBlink 1s infinite alternate;\
+        \}\
+\
+        .btn-enter-game:hover \{\
+            background-color: var(--pump-green);\
+            color: var(--bg-color);\
+            box-shadow: 0 0 50px var(--pump-green), inset 0 0 20px var(--pump-green);\
+        \}\
+\
+        /* --- HOW TO SURVIVE SECTION --- */\
+        .how-to \{\
+            padding: 60px 20px;\
+            border-top: 1px solid rgba(255, 255, 255, 0.1);\
+            background: rgba(0,0,0,0.5);\
+        \}\
+\
+        .glitch-title \{\
+            font-family: 'Press Start 2P', cursive;\
+            font-size: 1.5rem;\
+            color: var(--neon-pink);\
+            margin-bottom: 50px;\
+            animation: glitch 3s infinite;\
+        \}\
+\
+        .steps-container \{\
+            display: flex;\
+            justify-content: center;\
+            flex-wrap: wrap;\
+            gap: 30px;\
+            max-width: 1000px;\
+            margin: 0 auto;\
+        \}\
+\
+        .step-box \{\
+            flex: 1;\
+            min-width: 250px;\
+            background: rgba(255, 255, 255, 0.03);\
+            border: 1px solid rgba(255, 255, 255, 0.1);\
+            padding: 30px;\
+            border-radius: 10px;\
+        \}\
+\
+        .step-box h3 \{\
+            font-family: 'Press Start 2P', cursive;\
+            font-size: 1rem;\
+            color: var(--pump-green);\
+            margin-bottom: 15px;\
+            line-height: 1.5;\
+        \}\
+\
+        .step-box p \{\
+            font-size: 1rem;\
+            line-height: 1.6;\
+            color: #ccc;\
+        \}\
+\
+        /* --- FOOTER / SOCIALS --- */\
+        footer \{\
+            padding: 40px 20px 80px 20px;\
+            display: flex;\
+            justify-content: center;\
+            gap: 20px;\
+            flex-wrap: wrap;\
+        \}\
+\
+        .social-btn \{\
+            padding: 15px 30px;\
+            border: 1px solid #fff;\
+            color: #fff;\
+            text-decoration: none;\
+            font-weight: bold;\
+            text-transform: uppercase;\
+            border-radius: 5px;\
+            transition: 0.2s;\
+        \}\
+\
+        .social-btn:hover \{\
+            background: #fff;\
+            color: #000;\
+        \}\
+\
+        /* --- TICKER --- */\
+        .ticker-wrap \{\
+            position: fixed;\
+            bottom: 0;\
+            width: 100%;\
+            background-color: var(--pump-green);\
+            color: var(--bg-color);\
+            padding: 10px 0;\
+            font-family: 'Press Start 2P', cursive;\
+            font-size: 0.8rem;\
+            overflow: hidden;\
+            white-space: nowrap;\
+            z-index: 100;\
+            border-top: 2px solid #fff;\
+        \}\
+\
+        .ticker-content \{\
+            display: inline-block;\
+            padding-left: 100%;\
+            animation: ticker 20s linear infinite;\
+        \}\
+\
+        /* --- ANIMATIONS --- */\
+        @keyframes blink \{\
+            0% \{ opacity: 0.3; \}\
+            100% \{ opacity: 1; \}\
+        \}\
+\
+        @keyframes massiveBlink \{\
+            0% \{ box-shadow: 0 0 10px var(--pump-green); transform: scale(1); \}\
+            100% \{ box-shadow: 0 0 30px var(--pump-green), inset 0 0 15px var(--pump-green); transform: scale(1.02); \}\
+        \}\
+\
+        @keyframes ticker \{\
+            0% \{ transform: translate3d(0, 0, 0); \}\
+            100% \{ transform: translate3d(-100%, 0, 0); \}\
+        \}\
+\
+        @keyframes glitch \{\
+            0% \{ text-shadow: 2px 0 var(--pump-green), -2px 0 var(--neon-pink); \}\
+            5% \{ text-shadow: -2px 0 var(--pump-green), 2px 0 var(--neon-pink); \}\
+            10% \{ text-shadow: 2px 0 var(--pump-green), -2px 0 var(--neon-pink); \}\
+            15% \{ text-shadow: none; \}\
+            100% \{ text-shadow: none; \}\
+        \}\
+\
+        @media (max-width: 768px) \{\
+            h1.title \{ font-size: 2rem; \}\
+            .btn-enter-game \{ font-size: 1.2rem; \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+\
+    <!-- PRELOADER -->\
+    <div id="preloader">\
+        <div class="loading-text">\
+            BOOTING DEGEN ENGINE...<br><br>\
+            PUMPING $BALLS...\
+        </div>\
+    </div>\
+\
+    <!-- MAIN UI -->\
+    <div id="main-content">\
+        \
+        <section class="hero">\
+            <h1 class="title">BALLME.FUN</h1>\
+            <h2 class="subtitle">THE ULTIMATE SURVIVAL OF THE FATTEST</h2>\
+\
+            <div class="wallet-hub">\
+                <div id="hub-title" class="hub-title">CONNECT TO ENTER THE ARENA</div>\
+                \
+                <!-- Initial Wallet Buttons -->\
+                <div id="wallet-buttons" class="wallet-buttons">\
+                    <button class="btn btn-phantom" onclick="simulateConnection(this)">\uc0\u55357 \u57315  CONNECT PHANTOM</button>\
+                    <button class="btn btn-solflare" onclick="simulateConnection(this)">\uc0\u55357 \u57312  CONNECT SOLFLARE</button>\
+                </div>\
+\
+                <!-- Hidden Enter Game Button -->\
+                <button id="enter-game-btn" class="btn-enter-game">ENTER GAME</button>\
+            </div>\
+        </section>\
+\
+        <section class="how-to">\
+            <h2 class="glitch-title">HOW TO SURVIVE</h2>\
+            <div class="steps-container">\
+                <div class="step-box">\
+                    <h3>\uc0\u55357 \u56411  CONNECT & APE</h3>\
+                    <p>Connect your Phantom or Solflare wallet. No bullshit, straight to the action.</p>\
+                </div>\
+                <div class="step-box">\
+                    <h3>\uc0\u55357 \u57314  EAT & GROW</h3>\
+                    <p>Control your ball. Eat the small ones. Dodge the whales. Grow your $BALLS.</p>\
+                </div>\
+                <div class="step-box">\
+                    <h3>\uc0\u55356 \u57286  DOMINATE</h3>\
+                    <p>Take the number 1 spot on the leaderboard and flex on X.</p>\
+                </div>\
+            </div>\
+        </section>\
+\
+        <footer>\
+            <a href="#" class="social-btn">\uc0\u55357 \u56358  JOIN THE CULT (X)</a>\
+            <a href="#" class="social-btn">\uc0\u9992 \u65039  SHILL ZONE (TG)</a>\
+            <a href="#" class="social-btn">\uc0\u55357 \u56458  BUY $BALLS</a>\
+        </footer>\
+\
+    </div>\
+\
+    <!-- FIXED TICKER -->\
+    <div class="ticker-wrap">\
+        <div class="ticker-content">\
+            \uc0\u55357 \u56960  PUMP.FUN LAUNCH IMMINENT \u55357 \u57314  LIVE PLAYERS: 00 \u55357 \u57314  BIGGEST BALL: TBA \u55357 \u57314  DON'T JEET, JUST EAT \u55357 \u56960  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \u55357 \u56960  PUMP.FUN LAUNCH IMMINENT \u55357 \u57314  LIVE PLAYERS: 00 \u55357 \u57314  BIGGEST BALL: TBA \u55357 \u57314  DON'T JEET, JUST EAT \u55357 \u56960 \
+        </div>\
+    </div>\
+\
+    <script>\
+        // 1. Remove Preloader after 1.5 seconds\
+        window.addEventListener('load', () => \{\
+            setTimeout(() => \{\
+                document.getElementById('preloader').style.display = 'none';\
+                document.getElementById('main-content').style.display = 'block';\
+            \}, 1500);\
+        \});\
+\
+        // 2. UI Logic for Wallet Connection\
+        function simulateConnection(clickedButton) \{\
+            const walletButtonsContainer = document.getElementById('wallet-buttons');\
+            const hubTitle = document.getElementById('hub-title');\
+            const enterGameBtn = document.getElementById('enter-game-btn');\
+            \
+            // Visual feedback on click\
+            clickedButton.innerText = "CONNECTING...";\
+            \
+            // Simulate Web3 connection delay (1 second)\
+            setTimeout(() => \{\
+                // Hide wallet buttons and update title\
+                walletButtonsContainer.style.display = 'none';\
+                hubTitle.innerText = "WALLET CONNECTED. READY TO PUMP.";\
+                hubTitle.style.color = "#14F195"; // Make title green\
+                \
+                // Show the massive blinking ENTER GAME button\
+                enterGameBtn.style.display = 'block';\
+            \}, 1000);\
+        \}\
+\
+        // Dev Note: Bind actual Web3 logic to the ENTER GAME button\
+        document.getElementById('enter-game-btn').addEventListener('click', () => \{\
+            alert('DEV INSTRUCTION: This button triggers the game canvas to load over the UI.');\
+        \});\
+    </script>\
+\
+</body>\
+</html>}
